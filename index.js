@@ -5,7 +5,12 @@ const fs = require('fs');
 console.log('🚀 Avvio bot...');
 
 const warnFilePath = './warns.json';
-
+const client = new Client({
+  authStrategy: new LocalAuth(),
+  puppeteer: {
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  }
+});
 // Carica warns da file, se esiste
 let warnCount = new Map();
 if (fs.existsSync(warnFilePath)) {
