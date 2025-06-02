@@ -593,5 +593,20 @@ https://discord.gg/xCR6WcWrG5`
     if (msg === '!admin') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       const admins = chat.participants.filter(p => p.isAdmin);
+      const adminContacts = await Promise.all(admins.map(a => client.getContactById(a.id._serialized)));
+      if (adminContacts.length === 0) {
+        return message.reply('❌ Nessun admin trovato.');
+      }
+      const mentions = adminContacts;
+      const nomi = adminContacts.map(c => `@${c.id.user}`).join(' ');
+      return chat.sendMessage(`📢 Attenzione admin! Un utente ha bisogno di voi!\n${nomi}`, {
+        mentions
+      });
     }
+
+  } catch (error) {
+    console.error('Errore nel listener message:', error);
   }
+});
+
+client.initialize();
