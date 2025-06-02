@@ -1,12 +1,12 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
+const fetch = require('node-fetch');
 
 console.log('🚀 Avvio bot...');
 
 const warnFilePath = './warns.json';
 
-// Carica warns da file, se esiste
 let warnCount = new Map();
 if (fs.existsSync(warnFilePath)) {
   const data = fs.readFileSync(warnFilePath);
@@ -28,10 +28,9 @@ function saveWarns() {
 const autorizzatiSpam = new Set();
 const utentiMutati = new Set();
 
-// --- Sticker spam: 10 sticker in 20 secondi dallo stesso utente ---
-let userStickerTimestamps = {}; // chiave: chatId_userId, valore: array di timestamp
+let userStickerTimestamps = {};
 const STICKER_SPAM_LIMIT = 10;
-const STICKER_SPAM_WINDOW = 20 * 1000; // 20 secondi
+const STICKER_SPAM_WINDOW = 20 * 1000;
 
 function regexVariantiParola(parola) {
   const sostituzioni = {
@@ -145,7 +144,6 @@ const lastStickerMap = new Map();
 const MAX_IDENTICAL = 2;
 const MAX_STICKER = 1;
 
-// === QUI LA CONFIGURAZIONE CORRETTA PER RAILWAY ===
 const client = new Client({
   authStrategy: new LocalAuth(),
   puppeteer: {
@@ -163,6 +161,8 @@ client.on('ready', () => {
 
 client.on('group_participants_changed', async (notification) => {
   const chat = await notification.getChat();
+
+  // Messaggio di benvenuto
   if (notification.action === 'add') {
     for (const participant of notification.participants) {
       const contact = await client.getContactById(participant);
@@ -190,6 +190,30 @@ Per mantenere il gruppo un posto piacevole per tutti!
       });
     }
   }
+
+  // Messaggio di addio con foto profilo
+  if (notification.action === 'remove') {
+    for (const participant of notification.participants) {
+      const contact = await client.getContactById(participant);
+      const profilePicUrl = await client.getProfilePicUrl(participant);
+      let media;
+      if (profilePicUrl) {
+        const response = await fetch(profilePicUrl);
+        const buffer = await response.arrayBuffer();
+        const base64 = Buffer.from(buffer).toString('base64');
+        media = new MessageMedia('image/jpeg', base64, 'profile.jpg');
+      }
+      const addioMsg = `👋 Addio @${contact.id.user}`;
+      if (media) {
+        await chat.sendMessage(media, {
+          caption: addioMsg,
+          mentions: [contact]
+        });
+      } else {
+        await chat.sendMessage(addioMsg, { mentions: [contact] });
+      }
+    }
+  }
 });
 
 async function isAdmin(message) {
@@ -206,30 +230,29 @@ client.on('message', async message => {
     const chat = await message.getChat();
     const userId = message.author || message.from;
 
-    // --- INSULTI BANDITI (pattern tipici) ---
     if (contieneInsulto(message.body)) {
       await message.delete(true);
       await message.reply('🚫 Questo messaggio è stato cancellato: contiene insulti non consentiti.');
       return;
     }
-    // --- PAROLE BANDITE SEMPRE (anche varianti, plurali, femminili, inglesi) ---
+
     if (contieneParolaBandita(message.body)) {
       await message.delete(true);
       await message.reply('🚫 Questo messaggio è stato cancellato: contiene parole non consentite.');
       return;
     }
-    // --- BESTEMMIE ---
+
     if (contieneBestemmia(message.body)) {
       await message.delete(true);
       await message.reply('🚫 Questo messaggio è stato cancellato: contiene bestemmie.');
       return;
     }
-    // --- MUTE: cancella ogni messaggio degli utenti silenziati ---
+
     if (utentiMutati.has(userId)) {
       await message.delete(true);
       return;
     }
-    // --- ANTI-SPAM MESSAGGI IDENTICI ---
+
     if (message.type === 'chat' && !msg.startsWith('!')) {
       const last = lastMessageMap.get(userId) || { text: '', count: 0 };
       if (last.text === message.body) {
@@ -247,7 +270,7 @@ client.on('message', async message => {
     } else if (message.type === 'chat') {
       lastMessageMap.set(userId, { text: message.body, count: 1 });
     }
-    // --- ANTI-SPAM STICKER CONSECUTIVI (PER UTENTE) ---
+
     if (message.type === 'sticker') {
       const stickerCount = (lastStickerMap.get(userId) || 0) + 1;
       if (stickerCount > MAX_STICKER) {
@@ -260,7 +283,7 @@ client.on('message', async message => {
     } else {
       lastStickerMap.set(userId, 0);
     }
-    // --- ANTI-SPAM STICKER DI UTENTE (10 sticker in 20 secondi dallo stesso utente) ---
+
     if (chat.isGroup && message.type === 'sticker') {
       const isUserAdmin = await isAdmin(message);
       if (!isUserAdmin) {
@@ -284,7 +307,7 @@ client.on('message', async message => {
         }
       }
     }
-    // BLOCCO ANTI-SPAM LINK SOCIAL (TikTok: solo profili, non video)
+
     if (containsSocialLink(message.body)) {
       if (chat.isGroup) {
         if (!autorizzatiSpam.has(userId)) {
@@ -295,7 +318,6 @@ client.on('message', async message => {
       }
     }
 
-    // --- !info ---
     if (msg === '!info') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       let description = chat.description || "Nessuna descrizione";
@@ -308,7 +330,7 @@ client.on('message', async message => {
         `Descrizione: ${description}`
       );
     }
-    // --- !listadmin ---
+
     if (msg === '!listadmin') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       const admins = chat.participants.filter(p => p.isAdmin);
@@ -319,7 +341,7 @@ client.on('message', async message => {
         { mentions: adminContacts }
       );
     }
-    // --- !ping ---
+
     if (msg === '!ping') {
       const t0 = Date.now();
       const reply = await message.reply('🏓 Pong!');
@@ -329,7 +351,7 @@ client.on('message', async message => {
       }, 100);
       return;
     }
-    // --- !reminder [minuti] [testo] ---
+
     if (msg.startsWith('!reminder')) {
       const args = message.body.trim().split(' ');
       if (args.length < 3) {
@@ -351,7 +373,7 @@ client.on('message', async message => {
       }, minuti * 60 * 1000);
       return;
     }
-    // --- !aiuto ---
+
     if (msg === '!aiuto') {
       return message.reply(
         `📖 Comandi disponibili:
@@ -374,6 +396,7 @@ client.on('message', async message => {
 !reminder [minuti] [testo] - Promemoria personale`
       );
     }
+
     if (msg === '!regole') {
       return message.reply(
         `📜 Regole del gruppo:
@@ -385,6 +408,7 @@ client.on('message', async message => {
 6. Vietato insultare o bestemmiare`
       );
     }
+
     if (msg === '!citazione') {
       const citazioni = [
         '"Power comes in response to a need, not a desire." — Goku',
@@ -394,6 +418,7 @@ client.on('message', async message => {
       const rand = Math.floor(Math.random() * citazioni.length);
       return message.reply(citazioni[rand]);
     }
+
     if (msg.startsWith('!sondaggio')) {
       return message.reply(
         `🗳️ Vuoi creare un sondaggio? Scrivi:
@@ -401,12 +426,14 @@ client.on('message', async message => {
 E poi io ti guiderò.`
       );
     }
+
     if (msg === '!discord') {
       return message.reply(
         `🔗 Unisciti al nostro server Discord:
 https://discord.gg/xCR6WcWrG5`
       );
     }
+
     if (msg === '!admin') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       const admins = chat.participants.filter(p => p.isAdmin);
@@ -420,6 +447,7 @@ https://discord.gg/xCR6WcWrG5`
         mentions
       });
     }
+
     if (msg.startsWith('!ban')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -441,6 +469,7 @@ https://discord.gg/xCR6WcWrG5`
         return message.reply('❌ Non sono riuscito a bannare l’utente.');
       }
     }
+
     if (msg.startsWith('!warn')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -469,6 +498,7 @@ https://discord.gg/xCR6WcWrG5`
         return message.reply(`⚠️ ${contactWarned.pushname || contactWarned.number} ammonito (${count}/3). Al terzo warn sarà bannato.`);
       }
     }
+
     if (msg.startsWith('!autospam')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -483,6 +513,7 @@ https://discord.gg/xCR6WcWrG5`
       const contact = await client.getContactById(userToAuthorize);
       return message.reply(`✅ ${contact.pushname || contact.number} ora può inviare link social.`);
     }
+
     if (msg.startsWith('!delspam')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -497,6 +528,7 @@ https://discord.gg/xCR6WcWrG5`
       const contact = await client.getContactById(userToRemove);
       return message.reply(`🔒 ${contact.pushname || contact.number} non può più inviare link social.`);
     }
+
     if (msg.startsWith('!mute')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -511,6 +543,7 @@ https://discord.gg/xCR6WcWrG5`
       const contact = await client.getContactById(userToMute);
       return message.reply(`🔇 ${contact.pushname || contact.number} è stato silenziato.`);
     }
+
     if (msg.startsWith('!unmute')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -525,6 +558,7 @@ https://discord.gg/xCR6WcWrG5`
       const contact = await client.getContactById(userToUnmute);
       return message.reply(`🔊 ${contact.pushname || contact.number} può di nuovo scrivere.`);
     }
+
     if (msg === '!bloccagruppo') {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -533,6 +567,7 @@ https://discord.gg/xCR6WcWrG5`
       await chat.setMessagesAdminsOnly(true);
       return message.reply('🔒 Il gruppo è stato bloccato: solo gli admin possono scrivere!');
     }
+
     if (msg === '!sbloccagruppo') {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
