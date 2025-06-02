@@ -359,8 +359,121 @@ client.on('message', async message => {
       }
     }
 
-    // Tutti gli altri comandi come prima...
+    // --- !warn @utente ---
+    if (msg.startsWith('!warn')) {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      const mentionedIds = message.mentionedIds || message.mentionedJid || [];
+      if (mentionedIds.length === 0) {
+        return message.reply('❌ Devi menzionare un utente da ammonire.');
+      }
+      const userToWarn = mentionedIds[0];
+      let count = parseInt(warnCount.get(userToWarn) || '0', 10);
+      count++;
+      warnCount.set(userToWarn, count);
+      saveWarns();
+      const contactWarned = await client.getContactById(userToWarn);
+      if (count >= 3) {
+        try {
+          await chat.removeParticipants([userToWarn]);
+          warnCount.delete(userToWarn);
+          saveWarns();
+          return message.reply(`🚨 Utente ${contactWarned.pushname || contactWarned.number} bannato automaticamente dopo 3 warn.`);
+        } catch (err) {
+          return message.reply('❌ Non sono riuscito a bannare l’utente dopo i warn.');
+        }
+      } else {
+        return message.reply(`⚠️ ${contactWarned.pushname || contactWarned.number} ammonito (${count}/3). Al terzo warn sarà bannato.`);
+      }
+    }
 
+    // --- !autospam @utente ---
+    if (msg.startsWith('!autospam')) {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      const mentionedIds = message.mentionedIds || message.mentionedJid || [];
+      if (mentionedIds.length === 0) {
+        return message.reply('❌ Devi menzionare un utente da autorizzare.');
+      }
+      const userToAuthorize = mentionedIds[0];
+      autorizzatiSpam.add(userToAuthorize);
+      const contact = await client.getContactById(userToAuthorize);
+      return message.reply(`✅ ${contact.pushname || contact.number} ora può inviare link social.`);
+    }
+
+    // --- !delspam @utente ---
+    if (msg.startsWith('!delspam')) {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      const mentionedIds = message.mentionedIds || message.mentionedJid || [];
+      if (mentionedIds.length === 0) {
+        return message.reply('❌ Devi menzionare un utente da rimuovere dall’autorizzazione.');
+      }
+      const userToRemove = mentionedIds[0];
+      autorizzatiSpam.delete(userToRemove);
+      const contact = await client.getContactById(userToRemove);
+      return message.reply(`🔒 ${contact.pushname || contact.number} non può più inviare link social.`);
+    }
+
+    // --- !mute @utente ---
+    if (msg.startsWith('!mute')) {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      const mentionedIds = message.mentionedIds || message.mentionedJid || [];
+      if (mentionedIds.length === 0) {
+        return message.reply('❌ Devi menzionare un utente da silenziare.');
+      }
+      const userToMute = mentionedIds[0];
+      utentiMutati.add(userToMute);
+      const contact = await client.getContactById(userToMute);
+      return message.reply(`🔇 ${contact.pushname || contact.number} è stato silenziato.`);
+    }
+
+    // --- !unmute @utente ---
+    if (msg.startsWith('!unmute')) {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      const mentionedIds = message.mentionedIds || message.mentionedJid || [];
+      if (mentionedIds.length === 0) {
+        return message.reply('❌ Devi menzionare un utente da desilenziare.');
+      }
+      const userToUnmute = mentionedIds[0];
+      utentiMutati.delete(userToUnmute);
+      const contact = await client.getContactById(userToUnmute);
+      return message.reply(`🔊 ${contact.pushname || contact.number} può di nuovo scrivere.`);
+    }
+
+    // --- !bloccagruppo ---
+    if (msg === '!bloccagruppo') {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      await chat.setMessagesAdminsOnly(true);
+      return message.reply('🔒 Il gruppo è stato bloccato: solo gli admin possono scrivere!');
+    }
+
+    // --- !sbloccagruppo ---
+    if (msg === '!sbloccagruppo') {
+      if (!await isAdmin(message)) {
+        return message.reply('❌ Solo admin possono usare questo comando.');
+      }
+      if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
+      await chat.setMessagesAdminsOnly(false);
+      return message.reply('✅ Il gruppo è stato sbloccato, ora tutti possono scrivere!');
+    }
+
+    // --- !info ---
     if (msg === '!info') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       let description = chat.description || "Nessuna descrizione";
@@ -480,22 +593,3 @@ https://discord.gg/xCR6WcWrG5`
     if (msg === '!admin') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       const admins = chat.participants.filter(p => p.isAdmin);
-      const adminContacts = await Promise.all(admins.map(a => client.getContactById(a.id._serialized)));
-      if (adminContacts.length === 0) {
-        return message.reply('❌ Nessun admin trovato.');
-      }
-      const mentions = adminContacts;
-      const nomi = adminContacts.map(c => `@${c.id.user}`).join(' ');
-      return chat.sendMessage(`📢 Attenzione admin! Un utente ha bisogno di voi!\n${nomi}`, {
-        mentions
-      });
-    }
-
-    // ...altri comandi di moderazione (warn, mute, unmute, autospam, delspam, bloccagruppo, sbloccagruppo) come già nel codice precedente...
-
-  } catch (error) {
-    console.error('Errore nel listener message:', error);
-  }
-});
-
-client.initialize();
