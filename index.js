@@ -594,3 +594,4 @@ https://discord.gg/xCR6WcWrG5`
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       const admins = chat.participants.filter(p => p.isAdmin);
     }
+  }
