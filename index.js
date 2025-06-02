@@ -4,7 +4,8 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const axios = require('axios');
 
-const API_NINJAS_KEY = 'INSERISCI_LA_TUA_API_KEY';
+const API_NINJAS_KEY = yGiJUay7mAOTF5jVkEk3Cg==eMMzlEnECxwjEj0k
+;
 
 console.log('🚀 Avvio bot...');
 
