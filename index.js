@@ -2,10 +2,6 @@ const { Client, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const fs = require('fs');
 const fetch = require('node-fetch');
-const axios = require('axios');
-
-const API_NINJAS_KEY = yGiJUay7mAOTF5jVkEk3Cg==eMMzlEnECxwjEj0k
-;
 
 console.log('🚀 Avvio bot...');
 
@@ -142,19 +138,6 @@ function contieneParolaBanditaLocale(text) {
   return paroleBanditeRegex.some(re => re.test(cleanText) || re.test(normalizzato));
 }
 
-async function contieneParolaBanditaAPI(text) {
-  try {
-    const response = await axios.get('https://api.api-ninjas.com/v1/profanityfilter', {
-      params: { text },
-      headers: { 'X-Api-Key': API_NINJAS_KEY }
-    });
-    return response.data.has_profanity;
-  } catch (e) {
-    console.error('Errore filtro API:', e.message);
-    return false;
-  }
-}
-
 const lastMessageMap = new Map();
 const lastStickerMap = new Map();
 const MAX_IDENTICAL = 2;
@@ -246,8 +229,8 @@ client.on('message', async message => {
     const chat = await message.getChat();
     const userId = message.author || message.from;
 
-    // --- Filtro parole bandite: API o lista locale ---
-    if (await contieneParolaBanditaAPI(message.body) || contieneParolaBanditaLocale(message.body)) {
+    // --- Filtro parole bandite lista locale ---
+    if (contieneParolaBanditaLocale(message.body)) {
       await message.delete(true);
       await message.reply('🚫 Questo messaggio è stato cancellato: contiene parole non consentite.');
       return;
