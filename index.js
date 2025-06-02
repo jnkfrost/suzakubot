@@ -4,7 +4,8 @@ const fs = require('fs');
 const fetch = require('node-fetch');
 const axios = require('axios');
 
-const API_NINJAS_KEY = 'INSERISCI_LA_TUA_API_KEY';
+const API_NINJAS_KEY = 'yGiJUay7mAOTF5jVkEk3Cg==eMMzlEnECxwjEj0k
+';
 
 console.log('🚀 Avvio bot...');
 
@@ -37,7 +38,12 @@ const STICKER_SPAM_WINDOW = 20 * 1000;
 let gruppiStickerBloccati = new Set();
 const STICKER_BLOCK_DURATION = 5 * 60 * 1000; // 5 minuti
 
-// --- Filtro bestemmie (come prima) ---
+// --- Normalizza doppioni/tripli lettere ---
+function normalizzaDoppioni(text) {
+  return text.replace(/([a-zA-ZàèéìòùÀÈÉÌÒÙ@!|0-9])\1{1,}/gi, '$1');
+}
+
+// --- Filtro bestemmie ---
 const bestemmie = [
   "dio", "madonna", "gesu", "cristo", "maria", "giuseppe"
 ];
@@ -52,7 +58,6 @@ function contieneBestemmia(text) {
 
 // --- Filtro "cundo" e varianti ---
 function regexVariantiCundo() {
-  // Sostituzioni per lettere simili
   const map = {
     'c': '[cC]',
     'u': '[uùúûüUÙÚÛÜ]',
@@ -70,11 +75,79 @@ function regexVariantiCundo() {
 const reCundo = regexVariantiCundo();
 
 function contieneCundo(text) {
-  return reCundo.test(text);
+  const cleanText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9@!|àèéìòùÀÈÉÌÒÙ\s]/g, "");
+  const normalizzato = normalizzaDoppioni(cleanText);
+  return reCundo.test(cleanText) || reCundo.test(normalizzato);
+}
+
+// --- Lista locale parole bandite (con varianti, confini di parola, controllo doppioni) ---
+function regexVariantiParola(parola) {
+  const sostituzioni = {
+    'a': '[aàáâãäå@4AÀÁÂÃÄÅ]',
+    'e': '[eèéêë3EÈÉÊË]',
+    'i': '[iìíîï1!|IÌÍÎÏ]',
+    'o': '[oòóôõö0OÒÓÔÕÖ]',
+    'u': '[uùúûüUÙÚÛÜ]',
+    'n': '[nñNÑ]',
+    'c': '[cC]',
+    's': '[sS5$]',
+    'z': '[zZ2]',
+    'g': '[gG9]',
+    't': '[tT7]',
+    'r': '[rR]',
+    'd': '[dD]',
+    'l': '[lL1|!]',
+    'm': '[mM]',
+    'p': '[pP]',
+    'f': '[fF]',
+    'b': '[bB8]',
+    'h': '[hH]',
+    'q': '[qQ9]',
+    'v': '[vV]',
+    'y': '[yY]',
+    'x': '[xX]',
+  };
+  let regex_str = '';
+  for (const c of parola) {
+    if (sostituzioni[c.toLowerCase()]) {
+      regex_str += sostituzioni[c.toLowerCase()];
+    } else if (c === ' ') {
+      regex_str += '\\s+';
+    } else {
+      regex_str += c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+  }
+  return regex_str;
+}
+
+const paroleBanditeRaw = [
+  "puttana", "puttane", "puttano", "puttani",
+  "frocio", "froci", "frocia", "frocie",
+  "negro", "negri", "negra",
+  "ricchione", "ricchioni", "ricchiona",
+  "sborra", "sborrata", "sborrate", "sborrano",
+  "leccare i piedi", "leccata di piedi", "leccate di piedi", "leccapiedi",
+  "succhiare i cazzi", "succhiacazzi", "succhiando cazzi", "succhiacazzo",
+  "bitch", "bitches",
+  "fag", "fags", "faggot", "faggots",
+  "nigger", "niggers", "nigga", "niggas",
+  "whore", "whores",
+  "suck dick", "sucks dick", "sucking dick", "suck my dick", "suck cocks", "suck cock",
+  "foot licking", "foot licker", "lick my feet", "lick feet",
+  "cum", "cumming", "cumshot"
+];
+const paroleBanditeRegex = paroleBanditeRaw.map(p =>
+  new RegExp(`\\b${regexVariantiParola(p)}\\b`, 'i')
+);
+
+function contieneParolaBanditaLocale(text) {
+  const cleanText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-Z0-9@!|àèéìòùÀÈÉÌÒÙ\s]/g, "");
+  const normalizzato = normalizzaDoppioni(cleanText);
+  return paroleBanditeRegex.some(re => re.test(cleanText) || re.test(normalizzato));
 }
 
 // --- Filtro parole bandite via API Ninjas ---
-async function contieneParolaBandita(text) {
+async function contieneParolaBanditaAPI(text) {
   try {
     const response = await axios.get('https://api.api-ninjas.com/v1/profanityfilter', {
       params: { text },
@@ -178,8 +251,8 @@ client.on('message', async message => {
     const chat = await message.getChat();
     const userId = message.author || message.from;
 
-    // --- Filtro parole bandite via API Ninjas ---
-    if (await contieneParolaBandita(message.body)) {
+    // --- Filtro parole bandite: API o lista locale ---
+    if (await contieneParolaBanditaAPI(message.body) || contieneParolaBanditaLocale(message.body)) {
       await message.delete(true);
       await message.reply('🚫 Questo messaggio è stato cancellato: contiene parole non consentite.');
       return;
