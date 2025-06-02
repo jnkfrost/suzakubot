@@ -5,12 +5,7 @@ const fs = require('fs');
 console.log('🚀 Avvio bot...');
 
 const warnFilePath = './warns.json';
-const client = new Client({
-  authStrategy: new LocalAuth(),
-  puppeteer: {
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  }
-});
+
 // Carica warns da file, se esiste
 let warnCount = new Map();
 if (fs.existsSync(warnFilePath)) {
@@ -38,17 +33,6 @@ let userStickerTimestamps = {}; // chiave: chatId_userId, valore: array di times
 const STICKER_SPAM_LIMIT = 10;
 const STICKER_SPAM_WINDOW = 20 * 1000; // 20 secondi
 
-function checkStickerSpam(chatId, userId, now) {
-  const key = `${chatId}_${userId}`;
-  if (!userStickerTimestamps[key]) userStickerTimestamps[key] = [];
-  let timestamps = userStickerTimestamps[key];
-  timestamps = timestamps.filter(ts => now - ts <= STICKER_SPAM_WINDOW);
-  timestamps.push(now);
-  userStickerTimestamps[key] = timestamps;
-  return timestamps.length >= STICKER_SPAM_LIMIT;
-}
-
-// --- Parole/frasi bandite (singolari, plurali, femminili, inglesi, varianti, simboli) ---
 function regexVariantiParola(parola) {
   const sostituzioni = {
     'a': '[aàáâãäå@4AÀÁÂÃÄÅ]',
@@ -161,8 +145,12 @@ const lastStickerMap = new Map();
 const MAX_IDENTICAL = 2;
 const MAX_STICKER = 1;
 
+// === QUI LA CONFIGURAZIONE CORRETTA PER RAILWAY ===
 const client = new Client({
-  authStrategy: new LocalAuth()
+  authStrategy: new LocalAuth(),
+  puppeteer: {
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  }
 });
 
 client.on('qr', qr => {
@@ -306,6 +294,7 @@ client.on('message', async message => {
         }
       }
     }
+
     // --- !info ---
     if (msg === '!info') {
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
