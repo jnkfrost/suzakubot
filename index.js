@@ -90,7 +90,6 @@ const paroleBanditeRaw = [
   "foot licking", "foot licker", "lick my feet", "lick feet",
   "cum", "cumming", "cumshot"
 ];
-// SOLO parola intera!
 const paroleBanditeRegex = paroleBanditeRaw.map(p =>
   new RegExp(`\\b${regexVariantiParola(p)}\\b`, 'i')
 );
@@ -279,8 +278,9 @@ client.on('message', async message => {
     if (message.type === 'sticker') {
       const stickerCount = (lastStickerMap.get(userId) || 0) + 1;
       if (stickerCount > MAX_STICKER) {
-        await message.delete(true);
+        // Cancella solo se spam sticker consecutivi (non la prima volta!)
         lastStickerMap.set(userId, stickerCount);
+        // Non cancellare qui: la logica giusta è sotto!
       } else {
         lastStickerMap.set(userId, stickerCount);
       }
@@ -299,27 +299,31 @@ client.on('message', async message => {
         timestamps.push(now);
         userStickerTimestamps[key] = timestamps;
 
-        if (gruppiStickerBloccati.has(chat.id._serialized)) {
-          await message.delete(true);
-          return;
-        }
-
+        // Solo dal decimo sticker in poi cancella e blocca
         if (timestamps.length >= STICKER_SPAM_LIMIT) {
           await message.delete(true);
-          await chat.setMessagesAdminsOnly(true);
-          gruppiStickerBloccati.add(chat.id._serialized);
-          const admins = chat.participants.filter(p => p.isAdmin);
-          const adminContacts = await Promise.all(admins.map(a => client.getContactById(a.id._serialized)));
-          const mentions = adminContacts;
-          await chat.sendMessage(
-            `🚨 Il gruppo è stato bloccato per spam di sticker (10 di seguito da un utente in 20 secondi)! Solo gli admin possono scrivere. Gli admin possono sbloccare il gruppo con !sbloccagruppo.`,
-            { mentions }
-          );
-          setTimeout(async () => {
-            gruppiStickerBloccati.delete(chat.id._serialized);
-            await chat.setMessagesAdminsOnly(false);
-            await chat.sendMessage('✅ Il gruppo è stato sbloccato automaticamente dopo 5 minuti.');
-          }, STICKER_BLOCK_DURATION);
+          if (!gruppiStickerBloccati.has(chat.id._serialized)) {
+            await chat.setMessagesAdminsOnly(true);
+            gruppiStickerBloccati.add(chat.id._serialized);
+            const admins = chat.participants.filter(p => p.isAdmin);
+            const adminContacts = await Promise.all(admins.map(a => client.getContactById(a.id._serialized)));
+            const mentions = adminContacts;
+            await chat.sendMessage(
+              `🚨 Il gruppo è stato bloccato per spam di sticker (10 di seguito da un utente in 20 secondi)! Solo gli admin possono scrivere. Gli admin possono sbloccare il gruppo con !sbloccagruppo.`,
+              { mentions }
+            );
+            setTimeout(async () => {
+              gruppiStickerBloccati.delete(chat.id._serialized);
+              await chat.setMessagesAdminsOnly(false);
+              await chat.sendMessage('✅ Il gruppo è stato sbloccato automaticamente dopo 5 minuti.');
+            }, STICKER_BLOCK_DURATION);
+          }
+          return;
+        }
+        // Sticker 1-9: non cancellare nulla!
+        // Sticker 11+ (se ancora spam): cancella silenziosamente
+        if (timestamps.length > STICKER_SPAM_LIMIT) {
+          await message.delete(true);
           return;
         }
       }
