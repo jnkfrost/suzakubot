@@ -1,0 +1,13 @@
+{
+  "name": "botwhatsapp",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp per gestione gruppo anime",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.17.1",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
