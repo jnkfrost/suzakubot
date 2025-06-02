@@ -31,6 +31,8 @@ const utentiMutati = new Set();
 let userStickerTimestamps = {};
 const STICKER_SPAM_LIMIT = 10;
 const STICKER_SPAM_WINDOW = 20 * 1000;
+let gruppiStickerBloccati = new Set();
+const STICKER_BLOCK_DURATION = 5 * 60 * 1000; // 5 minuti
 
 function regexVariantiParola(parola) {
   const sostituzioni = {
@@ -88,7 +90,10 @@ const paroleBanditeRaw = [
   "foot licking", "foot licker", "lick my feet", "lick feet",
   "cum", "cumming", "cumshot"
 ];
-const paroleBanditeRegex = paroleBanditeRaw.map(p => new RegExp(regexVariantiParola(p), 'i'));
+// SOLO parola intera!
+const paroleBanditeRegex = paroleBanditeRaw.map(p =>
+  new RegExp(`\\b${regexVariantiParola(p)}\\b`, 'i')
+);
 
 const bestemmie = [
   "dio", "madonna", "gesu", "cristo", "maria", "giuseppe"
@@ -275,7 +280,6 @@ client.on('message', async message => {
       const stickerCount = (lastStickerMap.get(userId) || 0) + 1;
       if (stickerCount > MAX_STICKER) {
         await message.delete(true);
-        await message.reply('🚫 Non spammare sticker uno dopo l’altro!');
         lastStickerMap.set(userId, stickerCount);
       } else {
         lastStickerMap.set(userId, stickerCount);
@@ -284,6 +288,7 @@ client.on('message', async message => {
       lastStickerMap.set(userId, 0);
     }
 
+    // --- ANTI-SPAM STICKER DI UTENTE (10 sticker in 20 secondi dallo stesso utente) ---
     if (chat.isGroup && message.type === 'sticker') {
       const isUserAdmin = await isAdmin(message);
       if (!isUserAdmin) {
@@ -293,16 +298,28 @@ client.on('message', async message => {
         timestamps = timestamps.filter(ts => now - ts <= STICKER_SPAM_WINDOW);
         timestamps.push(now);
         userStickerTimestamps[key] = timestamps;
+
+        if (gruppiStickerBloccati.has(chat.id._serialized)) {
+          await message.delete(true);
+          return;
+        }
+
         if (timestamps.length >= STICKER_SPAM_LIMIT) {
+          await message.delete(true);
           await chat.setMessagesAdminsOnly(true);
+          gruppiStickerBloccati.add(chat.id._serialized);
           const admins = chat.participants.filter(p => p.isAdmin);
           const adminContacts = await Promise.all(admins.map(a => client.getContactById(a.id._serialized)));
           const mentions = adminContacts;
-          const nomi = adminContacts.map(c => `@${c.id.user}`).join(' ');
-          await chat.sendMessage(`🚨 Il gruppo è stato bloccato per spam di sticker (10 di seguito da @${userId.split('@')[0]} in 20 secondi)! Solo gli admin possono scrivere.\n${nomi}`, {
-            mentions
-          });
-          userStickerTimestamps[key] = [];
+          await chat.sendMessage(
+            `🚨 Il gruppo è stato bloccato per spam di sticker (10 di seguito da un utente in 20 secondi)! Solo gli admin possono scrivere. Gli admin possono sbloccare il gruppo con !sbloccagruppo.`,
+            { mentions }
+          );
+          setTimeout(async () => {
+            gruppiStickerBloccati.delete(chat.id._serialized);
+            await chat.setMessagesAdminsOnly(false);
+            await chat.sendMessage('✅ Il gruppo è stato sbloccato automaticamente dopo 5 minuti.');
+          }, STICKER_BLOCK_DURATION);
           return;
         }
       }
@@ -318,7 +335,7 @@ client.on('message', async message => {
       }
     }
 
-    // !ban con messaggio di addio PRIMA della rimozione
+    // --- !ban ---
     if (msg.startsWith('!ban')) {
       if (!await isAdmin(message)) {
         return message.reply('❌ Solo admin possono usare questo comando.');
@@ -470,6 +487,7 @@ client.on('message', async message => {
       }
       if (!chat.isGroup) return message.reply('❌ Comando disponibile solo nei gruppi.');
       await chat.setMessagesAdminsOnly(false);
+      gruppiStickerBloccati.delete(chat.id._serialized);
       return message.reply('✅ Il gruppo è stato sbloccato, ora tutti possono scrivere!');
     }
 
