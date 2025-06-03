@@ -79,22 +79,57 @@ function regexVariantiBestemmia(parola) {
   return regex_str;
 }
 function contieneBestemmia(text) {
-  const clean = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-zA-ZàèéìòùÀÈÉÌÒÙ\s]/g, "");
-  const normalizzato = normalizzaDoppioni(clean);
-  const porco = '[pP][oòóôõö0OÒÓÔÕÖ][rR][cC][oòóôõö0OÒÓÔÕÖaàáâãäå@4AÀÁÂÃÄÅ]?';
+  const clean = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  // Lista ampliata di bestemmie e santi
   const bestemmie = [
-    "dio", "madonna", "gesu", "cristo", "maria", "giuseppe"
+    "dio", "madonna", "gesu", "cristo", "maria", "giuseppe",
+    "santantonio", "santagata", "santanna", "santamaria", "sanpietro", "sanpaolo",
+    "sanluigi", "sanfrancesco", "sanrocco", "sanlorenzo", "sanmartino", "sanmichele",
+    "sansebastiano", "sanvito", "sanbiagio", "sanremo", "sanluca", "sanbernardo",
+    "sancristoforo", "sanvalentino", "sanraffaele"
   ];
+
+  const animali = [
+    "cane", "maiale", "porco", "gatto", "capra", "pecora", "asino", "zebra", "cammello", "coniglio", "bue", "toro", "oca", "papera", "pollo", "tacchino", "anatra"
+  ];
+
+  // Cerca combinazioni attaccate, con spazi, e fantasiose
   for (let b of bestemmie) {
-    const bVar = regexVariantiBestemmia(b);
-    const re1 = new RegExp(`\\b${porco}\\s*${bVar}\\b`, 'i');
-    const re2 = new RegExp(`\\b${bVar}\\s*${porco}\\b`, 'i');
-    if (re1.test(clean) || re2.test(clean) || re1.test(normalizzato) || re2.test(normalizzato)) {
+    // Forme attaccate e con spazi
+    const re1 = new RegExp(`porco\\s*${b}`, 'i');
+    const re2 = new RegExp(`${b}\\s*porco`, 'i');
+    const re3 = new RegExp(`${b}\\s*cane`, 'i');
+    const re4 = new RegExp(`porco\\s*${b}\\s*cane`, 'i');
+    const re5 = new RegExp(`${b}\\s*maiale`, 'i');
+    const re6 = new RegExp(`${b}\\s*merda`, 'i');
+    const re7 = new RegExp(`${b}\\s*ladro`, 'i');
+    const re8 = new RegExp(`${b}\\s*bastardo`, 'i');
+    const re9 = new RegExp(`${b}\\s*bestia`, 'i');
+    const re10 = new RegExp(`${b}\\s*schifoso`, 'i');
+    const re11 = new RegExp(`${b}\\s*diavolo`, 'i');
+    const re12 = new RegExp(`${b}\\s*infame`, 'i');
+    const re13 = new RegExp(`${b}\\s*${animali.join('|')}`, 'i');
+    // Bestemmia secca (es: "porcodio", "diocane", "madonnamaiale", ecc.)
+    const re14 = new RegExp(`(${b}${animali.join('|')})`, 'i');
+    const re15 = new RegExp(`(porco${b})`, 'i');
+    const re16 = new RegExp(`(${b}porco)`, 'i');
+    // Varianti con "di" in mezzo (es: "madonna di merda")
+    const re17 = new RegExp(`${b}\\s*di\\s*merda`, 'i');
+    if (
+      re1.test(clean) || re2.test(clean) || re3.test(clean) || re4.test(clean) ||
+      re5.test(clean) || re6.test(clean) || re7.test(clean) || re8.test(clean) ||
+      re9.test(clean) || re10.test(clean) || re11.test(clean) || re12.test(clean) ||
+      re13.test(clean) || re14.test(clean) || re15.test(clean) || re16.test(clean) ||
+      re17.test(clean)
+    ) {
       return true;
     }
   }
   return false;
 }
+
+
 function regexVariantiCundo() {
   const map = {
     'c': '[cC]',
