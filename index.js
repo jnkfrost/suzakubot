@@ -254,8 +254,6 @@ Rilassatevi e divertitevi! 🥐`);
   });
 });
 
-
-client.initialize();
 client.on('group_participants_changed', async (notification) => {
   const chat = await notification.getChat();
   const groupId = chat.id._serialized;
