@@ -1,0 +1,12 @@
+module.exports = {
+    GROUP_IDS: {
+        ANIME: '393336520050-1495999108@g.us',
+        POKEMON: '120363284707786265@g.us',
+        CAZZATA: '120363111600332295@g.us',
+        PROVABOT: '120363402008805194@g.us'
+    },
+    STICKER_SPAM_LIMIT: 10,
+    STICKER_SPAM_WINDOW: 20 * 1000,
+    STICKER_BLOCK_DURATION: 5 * 60 * 1000,
+    WARN_FILE_PATH: './warns.json'
+};
