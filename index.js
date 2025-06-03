@@ -333,15 +333,6 @@ Che il viaggio continui, e che tu possa trovare sempre nuovi Pokémon! 🍃✨`;
     }
   }
 });
-async function isAdmin(message) {
-  const chat = await message.getChat();
-  if (!chat.isGroup) return false;
-  const userId = message.author || message.from;
-  const participant = chat.participants.find(p => p.id._serialized === userId);
-  return participant ? participant.isAdmin : false;
-}
-
-
 client.on('message', async message => {
   const chat = await message.getChat();
   if (!chat.isGroup) return;
@@ -757,3 +748,4 @@ Usate *!sbloccagruppo* per sbloccare.
     );
   }
 }
+client.initialize();
