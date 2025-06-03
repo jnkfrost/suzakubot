@@ -14,16 +14,29 @@ client.on('qr', qr => qrcode.generate(qr, { small: true }));
 
 // Quando il bot è pronto
 client.on('ready', async () => {
-  console.log('✅ Bot attivo!');
-  const response = await openAI.responses.create({
-    model: "gpt-4.1-nano",
-    instructions: "Sei un bot in un gruppo di Anime, Gamers ecc... Parla come un'annunciatrice",
-    input: "Saluta le persone del gruppo presentandoti in modo breve e dando un caloroso saluto. Breve 4 righe max",
-  })
-  await client.sendMessage(
-      GROUP_IDS.ANIME,
-      response.output_text
-  );
+  console.log('Bot attivo!');
+
+  try {
+    const response = await openAI.chat.completions.create({
+      model: 'gpt-4',
+      messages: [
+        {
+          role: 'system',
+          content: "Sei un bot in un gruppo di Anime e Gamers. Parla come un'annunciatrice!"
+        },
+        {
+          role: 'user',
+          content: 'Saluta il gruppo presentandoti in modo caloroso. Breve, massimo 4 righe.'
+        }
+      ]
+    });
+
+    await client.sendMessage(GROUP_IDS.ANIME, response.choices[0].message.content);
+  } catch (err) {
+    console.error('Errore OpenAI:', err.message);
+  }
+
+  // Attiva messaggi schedulati
   scheduler.setup(client);
 });
 
