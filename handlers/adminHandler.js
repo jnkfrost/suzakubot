@@ -4,6 +4,7 @@ const { contieneParolaBanditaLocale } = require('../filters/badWords');
 const { contieneCundo } = require('../filters/cundo');
 const { warnCount, saveWarns } = require('../utils/storage');
 const { STICKER_SPAM_LIMIT, STICKER_SPAM_WINDOW, STICKER_BLOCK_DURATION } = require('../config');
+const handleGeneralCommands = require("./generalCommands");
 
 const utentiMutati = new Set();
 const autorizzatiSpam = new Set();
@@ -39,6 +40,7 @@ async function handleAdminGroup(message, chat, { filtroBestemmie = true } = {}) 
     await gestisciSpamMessaggi(message, userId);
     await gestisciSpamSticker(message, chat, userId);
     await gestisciComandi(message, chat, msg, userId);
+    await handleGeneralCommands(message, chat);
 }
 
 module.exports = handleAdminGroup;

@@ -1,4 +1,4 @@
-import {GROUP_IDS} from "./config";
+const { GROUP_IDS } = require('./config');
 
 const client = require('./client');
 const qrcode = require('qrcode-terminal');

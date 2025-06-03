@@ -1,6 +1,8 @@
 const { GROUP_IDS } = require('../config');
 const handleAdminGroup = require('./adminHandler');
 const handleCazzata = require('./cazzataHandler');
+const handleGeneralCommands = require('./generalCommands');
+
 
 /**
  * Smista i messaggi in base al gruppo
