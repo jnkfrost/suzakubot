@@ -42,6 +42,14 @@ const STICKER_BLOCK_DURATION = 5 * 60 * 1000;
 function normalizzaDoppioni(text) {
   return text.replace(/([a-zA-ZàèéìòùÀÈÉÌÒÙ@!|0-9])\1{1,}/gi, '$1');
 }
+async function isAdmin(message) {
+  const chat = await message.getChat();
+  if (!chat.isGroup) return false;
+  const userId = message.author || message.from;
+  const participant = chat.participants.find(p => p.id._serialized === userId);
+  return participant ? participant.isAdmin : false;
+}
+
 function regexVariantiBestemmia(parola) {
   const sostituzioni = {
     'a': '[aàáâãäå@4AÀÁÂÃÄÅ]',
