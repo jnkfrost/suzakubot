@@ -1,6 +1,5 @@
 const { GROUP_IDS } = require('../config');
 const handleAdminGroup = require('./adminHandler');
-const handleCazzata = require('./cazzataHandler');
 const handleGeneralCommands = require('./generalCommands');
 
 
@@ -22,12 +21,12 @@ async function messageRouter(message, chat) {
             break;
 
         case GROUP_IDS.CAZZATA:
-            await handleCazzata(message, chat);
+           // await handleCazzata(message, chat);
             break;
 
         case GROUP_IDS.PROVABOT:
             await handleAdminGroup(message, chat, { filtroBestemmie: true });
-            await handleCazzata(message, chat);
+           // await handleCazzata(message, chat);
             break;
 
         default:
