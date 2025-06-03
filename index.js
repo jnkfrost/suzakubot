@@ -539,6 +539,52 @@ Usate *!sbloccagruppo* per sbloccare.
       }
     }
   }
+// Easter egg bici/bicicletta
+if (chat.id._serialized === POKEMON_GROUP_ID) {
+  if (/\bbici\b/i.test(message.body) || /\bbicicletta\b/i.test(message.body)) {
+    await message.reply('🚲 "C\'è un tempo e un luogo per ogni cosa, ma non ora!" — Prof. Oak');
+    return;
+  }
+  if (/\bteam rocket\b/i.test(message.body)) {
+    await message.reply('😈 Sembra che il Team Rocket stia di nuovo tentando di rubare i Pokémon!');
+    return;
+  }
+  if (/\bmagikarp\b/i.test(message.body)) {
+    await message.reply('🐟 Magikarp... Splash! (non succede nulla)');
+    return;
+  }
+}
+
+
+// Easter egg nerd e pop
+if (chat.id._serialized === ANIME_GROUP_ID) {
+  // Easter egg nerd, pop, anime, Doctor Who
+  const easterEggs = [
+    { regex: /\bteam rocket\b/i, reply: "Sembra che il Team Rocket stia di nuovo tentando di rubare i Pokémon!" },
+    { regex: /\bmagikarp\b/i, reply: "Magikarp... Splash! (non succede nulla)" },
+    { regex: /\bbankai\b/i, reply: "BAN-KAI! (Bleach hype!)" },
+    { regex: /\bkamehameha\b/i, reply: "Kaaa... meee... haaa... meee... HAAAAAA! 💥" },
+    { regex: /\bzelda\b/i, reply: "It’s dangerous to go alone! Take this. 🗡️" },
+    { regex: /\bkonami\b/i, reply: "↑ ↑ ↓ ↓ ← → ← → B A — Codice inserito!" },
+    { regex: /\bbazinga\b/i, reply: "Sheldon approves this message! 🧠" },
+    { regex: /\btardis\b/i, reply: "🚪 *Sembra più grande all'interno!*" },
+    { regex: /\bsonico\b/i, reply: "🔦 *Non uscire mai senza il tuo cacciavite sonico!*" },
+    { regex: /\bcacciavite sonico\b/i, reply: "🔦 *Non uscire mai senza il tuo cacciavite sonico!*" },
+    { regex: /\brigenerazione\b/i, reply: "✨ *Il Dottore cambia aspetto, ma resta sempre il Dottore!*" },
+    { regex: /\bdalek\b/i, reply: "🛸 *EX-TER-MI-NATE!*" },
+    { regex: /\bgallifrey\b/i, reply: "🌌 *Gallifrey si trova nei cieli della costellazione di Kasterborous!*" },
+    { regex: /\bnon voltarti\b/i, reply: "🗿 *Non voltarti mai! Gli Angeli Piangenti sono dietro di te...*" },
+    { regex: /\bstatua\b/i, reply: "🗿 *Non voltarti mai! Gli Angeli Piangenti sono dietro di te...*" }
+  ];
+
+  for (const egg of easterEggs) {
+    if (egg.regex.test(message.body)) {
+      await message.reply(egg.reply);
+      return;
+    }
+  }
+}
+
   // --- !ban ---
   if (msg.startsWith('!ban')) {
     if (!await isAdmin(message)) {
