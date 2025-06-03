@@ -42,4 +42,9 @@ client.on('message', async message => {
   await messageRouter(message, chat);
 });
 
+client.on('disconnected', (reason) => {
+  console.error("❌ Disconnesso:", reason);
+});
+
+
 client.initialize();
