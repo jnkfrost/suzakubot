@@ -4,7 +4,7 @@ const client = require('./client');
 const qrcode = require('qrcode-terminal');
 const messageRouter = require('./handlers/messageHandler');
 const scheduler = require('./scheduler');
-import OpenAI from "openai";
+const OpenAI = require("openai");
 const openAI = new OpenAI();
 const apiKey = process.env.OPENAI_API_KEYY;
 
