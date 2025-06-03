@@ -5,8 +5,10 @@ const qrcode = require('qrcode-terminal');
 const messageRouter = require('./handlers/messageHandler');
 const scheduler = require('./scheduler');
 const OpenAI = require("openai");
-const openAI = new OpenAI();
-const apiKey = process.env.OPENAI_API_KEYY;
+const openAI = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
+
 
 
 // QR Code
