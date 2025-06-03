@@ -190,12 +190,32 @@ const MAX_STICKER = 1;
 
 const client = new Client({
   authStrategy: new LocalAuth(),
+  puppeteer: {
+    headless: true,
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--no-first-run',
+      '--no-zygote',
+      '--disable-gpu',
+      '--disable-extensions',
+      '--disable-default-apps',
+      '--disable-infobars',
+      '--disable-web-security',
+      '--disable-site-isolation-trials',
+      '--no-experiments',
+      '--ignore-gpu-blacklist',
+      '--ignore-certificate-errors',
+      '--ignore-certificate-errors-spki-list',
+      '--enable-features=NetworkService',
+      '--log-level=3'
+    ]
+  },
   webVersionCache: {
     type: 'remote',
     remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2413.51.html'
-  },
-  puppeteer: {
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
   }
 });
 
