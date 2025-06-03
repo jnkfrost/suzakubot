@@ -6,6 +6,8 @@ const messageRouter = require('./handlers/messageHandler');
 const scheduler = require('./scheduler');
 import OpenAI from "openai";
 const openAI = new OpenAI();
+const apiKey = process.env.OPENAI_API_KEYY;
+
 
 // QR Code
 client.on('qr', qr => qrcode.generate(qr, { small: true }));
