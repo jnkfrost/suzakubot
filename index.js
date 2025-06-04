@@ -55,14 +55,14 @@ function regexVariantiBestemmia(parola) {
     'a': '[aàáâãäå@4AÀÁÂÃÄÅ]',
     'e': '[eèéêë3EÈÉÊË]',
     'i': '[iìíîï1!|IÌÍÎÏ]',
-    'o': '[oòóôõö0OÒÓÔÕÖ]',
+    'o': '[oòóôõö0OÒÓÔÕÖ0]',
     'u': '[uùúûüUÙÚÛÜ]',
     'n': '[nñNÑ]',
     'c': '[cC]',
     's': '[sS5$]',
     'z': '[zZ2]',
     'g': '[gG9]',
-    't': '[tT7]',
+    't': '[tT7+]',
     'r': '[rR]',
     'd': '[dD]',
     'l': '[lL1|!]',
@@ -86,10 +86,10 @@ function regexVariantiBestemmia(parola) {
   }
   return regex_str;
 }
+
 function contieneBestemmia(text) {
   const clean = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-  // Lista ampliata di bestemmie e santi
   const bestemmie = [
     "dio", "madonna", "gesu", "cristo", "maria", "giuseppe",
     "santantonio", "santagata", "santanna", "santamaria", "sanpietro", "sanpaolo",
@@ -97,33 +97,57 @@ function contieneBestemmia(text) {
     "sansebastiano", "sanvito", "sanbiagio", "sanremo", "sanluca", "sanbernardo",
     "sancristoforo", "sanvalentino", "sanraffaele"
   ];
-
   const animali = [
     "cane", "maiale", "porco", "gatto", "capra", "pecora", "asino", "zebra", "cammello", "coniglio", "bue", "toro", "oca", "papera", "pollo", "tacchino", "anatra"
   ];
+  const insulti = [
+    "puttana", "troia", "zoccola", "negro", "merda", "ladro", "bastardo", "infame", "porca", "bestia", "schifoso", "diavolo", "ladra", "ladri"
+  ];
+  const variantiOffensive = [
+    "dionegro", "dio negro", "dio merda", "dio ladro", "dio bastardo", "dio infame", "dio porco", "porcodio", "dioporco",
+    "madonna puttana", "madonnaputtana", "madonna troia", "madonnatroia", "madonna zoccola", "madonnazoccola", "madonna porca", "madonnaporca",
+    "madonna porca puttana", "madonnaporcaputtana", "madonna puttana porca", "madonnaputtanaporca",
+    "porca madonna", "porcamadonna", "porca madonna puttana", "porcamadonna puttana", "porca madonna troia", "porcamadonna troia",
+    "porca maria", "porcamaria", "madonna negra", "madonnanegra"
+  ];
 
-  // Cerca combinazioni attaccate, con spazi, e fantasiose
+  // Varianti con "a" in mezzo (es: madonna a pecora, madonna a cane, madonna a puttana, ecc.)
+  for (let b of ["madonna", "maria", "cristo", "dio"]) {
+    for (let a of [...animali, ...insulti]) {
+      const reA = new RegExp(`\\b${regexVariantiBestemmia(b)}\\s*a\\s*${regexVariantiBestemmia(a)}\\b`, 'i');
+      const reAAttaccato = new RegExp(`${regexVariantiBestemmia(b)}a${regexVariantiBestemmia(a)}`, 'i');
+      if (reA.test(clean) || reAAttaccato.test(clean)) {
+        return true;
+      }
+    }
+  }
+  // Regex per varianti offensive (con lettere/numeri)
+  for (let v of variantiOffensive) {
+    const re = new RegExp(`\\b${regexVariantiBestemmia(v.replace(/\s+/g, ''))}\\b`, 'i');
+    if (re.test(clean.replace(/\s+/g, ''))) {
+      return true;
+    }
+  }
+  // Combinazioni classiche, attaccate e con spazi, con varianti
   for (let b of bestemmie) {
-    // Forme attaccate e con spazi
-    const re1 = new RegExp(`porco\\s*${b}`, 'i');
-    const re2 = new RegExp(`${b}\\s*porco`, 'i');
-    const re3 = new RegExp(`${b}\\s*cane`, 'i');
-    const re4 = new RegExp(`porco\\s*${b}\\s*cane`, 'i');
-    const re5 = new RegExp(`${b}\\s*maiale`, 'i');
-    const re6 = new RegExp(`${b}\\s*merda`, 'i');
-    const re7 = new RegExp(`${b}\\s*ladro`, 'i');
-    const re8 = new RegExp(`${b}\\s*bastardo`, 'i');
-    const re9 = new RegExp(`${b}\\s*bestia`, 'i');
-    const re10 = new RegExp(`${b}\\s*schifoso`, 'i');
-    const re11 = new RegExp(`${b}\\s*diavolo`, 'i');
-    const re12 = new RegExp(`${b}\\s*infame`, 'i');
-    const re13 = new RegExp(`${b}\\s*${animali.join('|')}`, 'i');
-    // Bestemmia secca (es: "porcodio", "diocane", "madonnamaiale", ecc.)
-    const re14 = new RegExp(`(${b}${animali.join('|')})`, 'i');
-    const re15 = new RegExp(`(porco${b})`, 'i');
-    const re16 = new RegExp(`(${b}porco)`, 'i');
-    // Varianti con "di" in mezzo (es: "madonna di merda")
-    const re17 = new RegExp(`${b}\\s*di\\s*merda`, 'i');
+    const bVar = regexVariantiBestemmia(b);
+    const re1 = new RegExp(`\\b${regexVariantiBestemmia('porco')}\\s*${bVar}\\b`, 'i');
+    const re2 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('porco')}\\b`, 'i');
+    const re3 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('cane')}\\b`, 'i');
+    const re4 = new RegExp(`\\b${regexVariantiBestemmia('porco')}\\s*${bVar}\\s*${regexVariantiBestemmia('cane')}\\b`, 'i');
+    const re5 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('maiale')}\\b`, 'i');
+    const re6 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('merda')}\\b`, 'i');
+    const re7 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('ladro')}\\b`, 'i');
+    const re8 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('bastardo')}\\b`, 'i');
+    const re9 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('bestia')}\\b`, 'i');
+    const re10 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('schifoso')}\\b`, 'i');
+    const re11 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('diavolo')}\\b`, 'i');
+    const re12 = new RegExp(`\\b${bVar}\\s*${regexVariantiBestemmia('infame')}\\b`, 'i');
+    const re13 = new RegExp(`\\b${bVar}\\s*(${animali.map(regexVariantiBestemmia).join('|')})\\b`, 'i');
+    const re14 = new RegExp(`${bVar}(${animali.map(regexVariantiBestemmia).join('|')})`, 'i');
+    const re15 = new RegExp(`(${regexVariantiBestemmia('porco')}${bVar})`, 'i');
+    const re16 = new RegExp(`(${bVar}${regexVariantiBestemmia('porco')})`, 'i');
+    const re17 = new RegExp(`${bVar}\\s*di\\s*${regexVariantiBestemmia('merda')}`, 'i');
     if (
       re1.test(clean) || re2.test(clean) || re3.test(clean) || re4.test(clean) ||
       re5.test(clean) || re6.test(clean) || re7.test(clean) || re8.test(clean) ||
@@ -136,6 +160,7 @@ function contieneBestemmia(text) {
   }
   return false;
 }
+
 
 
 function regexVariantiCundo() {
@@ -604,7 +629,7 @@ if (chat.id._serialized === ANIME_GROUP_ID) {
   // Easter egg nerd, pop, anime, Doctor Who
   const easterEggs = [
     { regex: /\bteam rocket\b/i, reply: "Sembra che il Team Rocket stia di nuovo tentando di rubare i Pokémon!" },
-    { regex: /\bmagikarp\b/i, reply: "Magikarp... Splash! (non succede nulla)" },
+    { regex: /\bmagikarp\b/i, reply: "🐟 Magikarp... Splash! (non succede nulla)" },
     { regex: /\bbankai\b/i, reply: "BAN-KAI! (Bleach hype!)" },
     { regex: /\bkamehameha\b/i, reply: "Kaaa... meee... haaa... meee... HAAAAAA! 💥" },
     { regex: /\bzelda\b/i, reply: "It’s dangerous to go alone! Take this. 🗡️" },
