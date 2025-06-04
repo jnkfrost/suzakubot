@@ -292,6 +292,8 @@ client.on('qr', qr => {
 });
 
 client.on('ready', async () => {
+  client.on('ready', () => console.log('🚀 Bot attivo e pronto!'));
+
   const chats = await client.getChats();
   const groups = chats.filter(chat => chat.isGroup);
   groups.forEach(group => {
@@ -915,3 +917,4 @@ if (chat.id._serialized === ANIME_GROUP_ID) {
   }
 }
 client.initialize();
+client.on('qr', qr => qrcode.generate(qr, { small: true }));
