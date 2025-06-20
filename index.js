@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Import dei moduli del bot
-const { handleAdminGroup } = require('./handlers/admingroup');
+const { handleAdminGroup } = require('./handlers/adminGroup');
 const { handleModeration } = require('./handlers/moderation');
 const { handleWelcome } = require('./handlers/welcome');
 const { handleEasterEggs } = require('./handlers/eastereggs');
