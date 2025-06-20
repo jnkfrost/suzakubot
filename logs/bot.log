@@ -1,0 +1,29 @@
+[19/06/2025, 18:11:41] [INFO] 🚀 Avvio SuzakuBot...
+[19/06/2025, 18:11:56] [ERROR] Errore non gestito: ProtocolError: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.
+[19/06/2025, 18:13:34] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[19/06/2025, 18:13:34] [INFO] Backup completato: backups\backup-2025-06-19T16-13-34-153Z.json
+[19/06/2025, 18:13:37] [INFO] 🚀 Avvio SuzakuBot...
+[19/06/2025, 18:13:43] [INFO] QR Code ricevuto! Scansiona con il tuo telefono:
+[19/06/2025, 18:14:02] [SUCCESS] Autenticazione completata con successo!
+[19/06/2025, 18:14:03] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[19/06/2025, 18:14:03] [INFO] Bot connesso come: SuzakuBot
+[19/06/2025, 18:14:03] [INFO] Numero WhatsApp: 393517331560
+[19/06/2025, 18:14:31] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[19/06/2025, 18:14:31] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 18:14:39] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Eh sì
+[19/06/2025, 18:14:39] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 18:14:44] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ah
+[19/06/2025, 18:14:44] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 18:14:48] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Vabbè
+[19/06/2025, 18:14:48] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 21:57:34] [INFO] 🚀 Avvio SuzakuBot...
+[19/06/2025, 21:58:01] [SUCCESS] Autenticazione completata con successo!
+[19/06/2025, 21:58:02] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[19/06/2025, 21:58:02] [INFO] Bot connesso come: SuzakuBot
+[19/06/2025, 21:58:02] [INFO] Numero WhatsApp: 393517331560
+[19/06/2025, 21:59:23] [DEBUG] Messaggio ricevuto da 393293671259@c.us: 
+[19/06/2025, 21:59:23] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 21:59:37] [DEBUG] Messaggio ricevuto da 393278954295@c.us: Quoto
+[19/06/2025, 21:59:37] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 21:59:56] [DEBUG] Messaggio ricevuto da 393471367899@c.us: Unlucky
+[19/06/2025, 21:59:56] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
