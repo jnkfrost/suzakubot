@@ -1,0 +1,620 @@
+[19/06/2025, 18:11:41] [INFO] 🚀 Avvio SuzakuBot...
+[19/06/2025, 18:11:56] [ERROR] Errore non gestito: ProtocolError: Protocol error (Runtime.callFunctionOn): Execution context was destroyed.
+[19/06/2025, 18:13:34] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[19/06/2025, 18:13:34] [INFO] Backup completato: backups\backup-2025-06-19T16-13-34-153Z.json
+[19/06/2025, 18:13:37] [INFO] 🚀 Avvio SuzakuBot...
+[19/06/2025, 18:13:43] [INFO] QR Code ricevuto! Scansiona con il tuo telefono:
+[19/06/2025, 18:14:02] [SUCCESS] Autenticazione completata con successo!
+[19/06/2025, 18:14:03] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[19/06/2025, 18:14:03] [INFO] Bot connesso come: SuzakuBot
+[19/06/2025, 18:14:03] [INFO] Numero WhatsApp: 393517331560
+[19/06/2025, 18:14:31] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[19/06/2025, 18:14:31] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 18:14:39] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Eh sì
+[19/06/2025, 18:14:39] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 18:14:44] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ah
+[19/06/2025, 18:14:44] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 18:14:48] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Vabbè
+[19/06/2025, 18:14:48] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 21:57:34] [INFO] 🚀 Avvio SuzakuBot...
+[19/06/2025, 21:58:01] [SUCCESS] Autenticazione completata con successo!
+[19/06/2025, 21:58:02] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[19/06/2025, 21:58:02] [INFO] Bot connesso come: SuzakuBot
+[19/06/2025, 21:58:02] [INFO] Numero WhatsApp: 393517331560
+[19/06/2025, 21:59:23] [DEBUG] Messaggio ricevuto da 393293671259@c.us: 
+[19/06/2025, 21:59:23] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 21:59:37] [DEBUG] Messaggio ricevuto da 393278954295@c.us: Quoto
+[19/06/2025, 21:59:37] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[19/06/2025, 21:59:56] [DEBUG] Messaggio ricevuto da 393471367899@c.us: Unlucky
+[19/06/2025, 21:59:56] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:26:42] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:27:16] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:27:18] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:27:18] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:27:18] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:27:29] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[20/06/2025, 14:27:29] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:27:33] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Perché
+[20/06/2025, 14:27:33] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:28:12] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ufff
+[20/06/2025, 14:28:12] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:28:46] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Il mio migliore amico va al campeggio lì
+[20/06/2025, 14:28:46] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:28:56] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Che cazzo vuoi
+[20/06/2025, 14:28:56] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:28:56] [DEBUG] Messaggio ricevuto da 393896608634@c.us: che schifo
+[20/06/2025, 14:28:56] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:00] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Ma che vuole
+[20/06/2025, 14:29:00] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:03] [DEBUG] Messaggio ricevuto da 393896608634@c.us: zitto
+[20/06/2025, 14:29:03] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:08] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Ma ce l'ha con me
+[20/06/2025, 14:29:09] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:17] [DEBUG] Messaggio ricevuto da 393896608634@c.us: problemi di bot
+[20/06/2025, 14:29:17] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:20] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ah
+[20/06/2025, 14:29:20] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:24] [DEBUG] Messaggio ricevuto da 393896608634@c.us: OGNI
+[20/06/2025, 14:29:24] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:26] [DEBUG] Messaggio ricevuto da 393896608634@c.us: MESSAGGIO
+[20/06/2025, 14:29:26] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:28] [DEBUG] Messaggio ricevuto da 393896608634@c.us: DA
+[20/06/2025, 14:29:28] [ERROR] Errore nella gestione del messaggio: contieneParolaBanditaLocale is not a function
+[20/06/2025, 14:29:30] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:29:30] [INFO] Backup completato: backups\backup-2025-06-20T12-29-30-146Z.json
+[20/06/2025, 14:35:42] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:35:55] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:35:55] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:35:55] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:35:55] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:35:55] [DEBUG] Messaggio ricevuto da 393518054486@c.us: HAHAHAHAHAHA
+[20/06/2025, 14:35:55] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:55] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Lo sto sistemando
+[20/06/2025, 14:35:55] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:55] [DEBUG] Messaggio ricevuto da 393896608634@c.us: ma é tuo?
+[20/06/2025, 14:35:55] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:55] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Sis l'ho fatto a tempo perso
+[20/06/2025, 14:35:56] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:56] [DEBUG] Messaggio ricevuto da 393896608634@c.us: fallo nsfw
+[20/06/2025, 14:35:56] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:56] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Noh
+[20/06/2025, 14:35:56] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:56] [DEBUG] Messaggio ricevuto da 393896608634@c.us: uffa
+[20/06/2025, 14:35:56] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:56] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Serve apposta contro
+[20/06/2025, 14:35:56] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:56] [DEBUG] Messaggio ricevuto da 393896608634@c.us: uffa
+[20/06/2025, 14:35:56] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:57] [DEBUG] Messaggio ricevuto da 393319270704@c.us: SI VEDE
+[20/06/2025, 14:35:57] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:57] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Zitto che manco mi hai voluto aiutare
+[20/06/2025, 14:35:57] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:57] [DEBUG] Messaggio ricevuto da 393319270704@c.us: si perché è un bot senza senso
+[20/06/2025, 14:35:57] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:57] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Ne sto cucinando uno per Pokémon che non hai idea
+[20/06/2025, 14:35:57] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:35:57] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Fa vede
+[20/06/2025, 14:35:57] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:36:00] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Vediamo se si verifica
+[20/06/2025, 14:36:00] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:36:15] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:36:15] [INFO] Backup completato: backups\backup-2025-06-20T12-36-15-102Z.json
+[20/06/2025, 14:39:33] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:39:40] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:39:40] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:39:40] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:39:40] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:39:49] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Sjs
+[20/06/2025, 14:39:49] [ERROR] Errore nella gestione del messaggio: contieneCundo is not a function
+[20/06/2025, 14:39:58] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:39:58] [INFO] Backup completato: backups\backup-2025-06-20T12-39-58-857Z.json
+[20/06/2025, 14:41:05] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:41:13] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:41:13] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:41:13] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:41:13] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:41:34] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Boh
+[20/06/2025, 14:41:34] [ERROR] Errore nella gestione del messaggio: handleMinigiochi is not a function
+[20/06/2025, 14:41:41] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:41:41] [INFO] Backup completato: backups\backup-2025-06-20T12-41-41-866Z.json
+[20/06/2025, 14:47:43] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:47:50] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:47:50] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:47:50] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:47:50] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:47:59] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ht
+[20/06/2025, 14:47:59] [ERROR] Errore nella gestione del messaggio: handleMinigiochi is not a function
+[20/06/2025, 14:48:07] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:48:07] [INFO] Backup completato: backups\backup-2025-06-20T12-48-07-778Z.json
+[20/06/2025, 14:48:10] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:48:17] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:48:18] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:48:18] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:48:18] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:48:29] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Basta
+[20/06/2025, 14:48:29] [ERROR] Errore nella gestione del messaggio: handleMinigiochi is not defined
+[20/06/2025, 14:48:42] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Zitto
+[20/06/2025, 14:48:42] [ERROR] Errore nella gestione del messaggio: handleMinigiochi is not defined
+[20/06/2025, 14:48:45] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:48:45] [INFO] Backup completato: backups\backup-2025-06-20T12-48-45-682Z.json
+[20/06/2025, 14:49:55] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 14:50:02] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 14:50:02] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 14:50:02] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 14:50:02] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 14:50:06] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Hhhf
+[20/06/2025, 14:50:06] [ERROR] Errore nella gestione del messaggio: Cannot read properties of undefined (reading '_serialized')
+[20/06/2025, 14:50:12] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 14:50:12] [INFO] Backup completato: backups\backup-2025-06-20T12-50-12-335Z.json
+[20/06/2025, 14:50:12] [DEBUG] Backup vecchio eliminato: backup-2025-06-19T16-13-34-153Z.json
+[20/06/2025, 15:04:17] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:04:30] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:04:30] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:04:30] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:04:30] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:04:34] [DEBUG] Messaggio ricevuto da 393319270704@c.us: Zitto
+[20/06/2025, 15:04:41] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Sjs
+[20/06/2025, 15:04:45] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[20/06/2025, 15:04:54] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ah perché questo non è un gruppo
+[20/06/2025, 15:04:55] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ci sta
+[20/06/2025, 15:05:29] [DEBUG] Messaggio ricevuto da 393427532292@c.us: AHAHAHHAHA
+[20/06/2025, 15:07:03] [DEBUG] Messaggio ricevuto da 393791405854@c.us: Bravaaaaaaaa
+[20/06/2025, 15:07:07] [DEBUG] Messaggio ricevuto da 393791405854@c.us: 
+[20/06/2025, 15:07:08] [DEBUG] Messaggio ricevuto da 393791405854@c.us: 
+[20/06/2025, 15:07:23] [DEBUG] Messaggio ricevuto da 393209137058@c.us: e te che me volevi mena
+[20/06/2025, 15:07:32] [DEBUG] Messaggio ricevuto da 393791405854@c.us: Te meno lo stesso
+[20/06/2025, 15:07:33] [DEBUG] Messaggio ricevuto da 393791405854@c.us: 
+[20/06/2025, 15:08:23] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:08:23] [INFO] Backup completato: backups\backup-2025-06-20T13-08-23-353Z.json
+[20/06/2025, 15:08:23] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-29-30-146Z.json
+[20/06/2025, 15:08:25] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:08:32] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:08:32] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:08:32] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:08:32] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:08:35] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ti meno io se non ti concentri
+[20/06/2025, 15:08:39] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[20/06/2025, 15:08:43] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ma porcodio
+[20/06/2025, 15:08:48] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Vabbè va
+[20/06/2025, 15:09:57] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:09:57] [INFO] Backup completato: backups\backup-2025-06-20T13-09-57-595Z.json
+[20/06/2025, 15:09:57] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-36-15-102Z.json
+[20/06/2025, 15:09:59] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:10:06] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:10:06] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:10:06] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:10:06] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:10:16] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[20/06/2025, 15:11:11] [DEBUG] Messaggio ricevuto da 393427532292@c.us: negri
+[20/06/2025, 15:11:13] [DEBUG] Messaggio ricevuto da 393427532292@c.us: negro
+[20/06/2025, 15:11:15] [DEBUG] Messaggio ricevuto da 393427532292@c.us: frocio
+[20/06/2025, 15:11:18] [DEBUG] Messaggio ricevuto da 393427532292@c.us: froci
+[20/06/2025, 15:11:21] [DEBUG] Messaggio ricevuto da 393427532292@c.us: dio porco
+[20/06/2025, 15:11:29] [DEBUG] Messaggio ricevuto da 393518054486@c.us: 
+[20/06/2025, 15:11:32] [DEBUG] Messaggio ricevuto da 393427532292@c.us: ah ok
+[20/06/2025, 15:11:34] [DEBUG] Messaggio ricevuto da 393427532292@c.us: AGAHAHQHAHHAQH
+[20/06/2025, 15:11:41] [DEBUG] Messaggio ricevuto da 393427532292@c.us: dio negro?
+[20/06/2025, 15:12:02] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Che palle mi ha cambiato tutto il set ora mi pesa rimettere tutto come prima
+[20/06/2025, 15:13:07] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:13:07] [INFO] Backup completato: backups\backup-2025-06-20T13-13-07-153Z.json
+[20/06/2025, 15:13:07] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-39-58-857Z.json
+[20/06/2025, 15:16:17] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:16:24] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:16:24] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:16:24] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:16:24] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:16:33] [DEBUG] Messaggio ricevuto da 393518054486@c.us: !info
+[20/06/2025, 15:16:37] [DEBUG] Messaggio ricevuto da 393518054486@c.us: Ae
+[20/06/2025, 15:19:42] [DEBUG] Messaggio ricevuto da 393427532292@c.us: frocio
+[20/06/2025, 15:19:44] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:19:44] [INFO] Backup completato: backups\backup-2025-06-20T13-19-44-525Z.json
+[20/06/2025, 15:19:44] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-41-41-866Z.json
+[20/06/2025, 15:19:46] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:19:53] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:19:54] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:19:54] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:19:54] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:42:18] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:42:18] [INFO] Backup completato: backups\backup-2025-06-20T13-42-18-336Z.json
+[20/06/2025, 15:42:18] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-48-07-778Z.json
+[20/06/2025, 15:42:20] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:42:34] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:42:34] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:42:34] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:42:34] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:53:32] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:53:32] [INFO] Backup completato: backups\backup-2025-06-20T13-53-32-408Z.json
+[20/06/2025, 15:53:32] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-48-45-682Z.json
+[20/06/2025, 15:54:39] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:54:52] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:54:53] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:54:53] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:54:53] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 15:57:18] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 15:57:18] [INFO] Backup completato: backups\backup-2025-06-20T13-57-18-473Z.json
+[20/06/2025, 15:57:18] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T12-50-12-335Z.json
+[20/06/2025, 15:57:20] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 15:57:27] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 15:57:27] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 15:57:27] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 15:57:27] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:02:17] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:02:17] [INFO] Backup completato: backups\backup-2025-06-20T14-02-17-725Z.json
+[20/06/2025, 16:02:17] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-08-23-353Z.json
+[20/06/2025, 16:02:19] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:02:26] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:02:26] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:02:26] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:02:26] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:05:59] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:05:59] [INFO] Backup completato: backups\backup-2025-06-20T14-05-59-810Z.json
+[20/06/2025, 16:05:59] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-09-57-595Z.json
+[20/06/2025, 16:06:02] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:06:09] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:06:09] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:06:09] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:06:09] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:10:21] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:10:21] [INFO] Backup completato: backups\backup-2025-06-20T14-10-21-257Z.json
+[20/06/2025, 16:10:21] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-13-07-153Z.json
+[20/06/2025, 16:10:59] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:11:06] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:11:06] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:11:06] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:11:06] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:21:59] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:21:59] [INFO] Backup completato: backups\backup-2025-06-20T14-21-59-376Z.json
+[20/06/2025, 16:21:59] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-19-44-525Z.json
+[20/06/2025, 16:22:10] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:22:24] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:22:24] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:22:24] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:22:24] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:23:21] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:23:21] [INFO] Backup completato: backups\backup-2025-06-20T14-23-21-081Z.json
+[20/06/2025, 16:23:21] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-42-18-336Z.json
+[20/06/2025, 16:29:39] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:29:54] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:29:55] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:29:55] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:29:55] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:34:05] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:34:05] [INFO] Backup completato: backups\backup-2025-06-20T14-34-05-780Z.json
+[20/06/2025, 16:34:05] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-53-32-408Z.json
+[20/06/2025, 16:34:08] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:34:16] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:34:16] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:34:16] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:34:16] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:36:05] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:36:05] [INFO] Backup completato: backups\backup-2025-06-20T14-36-05-432Z.json
+[20/06/2025, 16:36:05] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T13-57-18-473Z.json
+[20/06/2025, 16:36:27] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:36:35] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:36:35] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:36:35] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:36:35] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:39:08] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:39:08] [INFO] Backup completato: backups\backup-2025-06-20T14-39-08-855Z.json
+[20/06/2025, 16:39:08] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-02-17-725Z.json
+[20/06/2025, 16:39:11] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:39:18] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:39:18] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:39:18] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:39:18] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:45:50] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:45:50] [INFO] Backup completato: backups\backup-2025-06-20T14-45-50-341Z.json
+[20/06/2025, 16:45:50] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-05-59-810Z.json
+[20/06/2025, 16:45:53] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 16:46:01] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 16:46:01] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 16:46:01] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 16:46:01] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 16:46:11] [ERROR] Errore nella gestione del messaggio: msgClean is not defined
+[20/06/2025, 16:46:18] [ERROR] Errore nella gestione del messaggio: msgClean is not defined
+[20/06/2025, 16:46:22] [ERROR] Errore nella gestione del messaggio: msgClean is not defined
+[20/06/2025, 16:46:26] [ERROR] Errore nella gestione del messaggio: msgClean is not defined
+[20/06/2025, 16:46:29] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 16:46:29] [INFO] Backup completato: backups\backup-2025-06-20T14-46-29-784Z.json
+[20/06/2025, 16:46:29] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-10-21-257Z.json
+[20/06/2025, 20:12:56] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:13:16] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:13:17] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:13:17] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:13:17] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:18] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:19] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:19] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:19] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:19] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:20] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:21] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:21] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:22] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:23] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:24] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:25] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:52] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:52] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:13:53] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:14:04] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:14:06] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:14:11] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:14:14] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:14:18] [WARNING] Rate limit superato per utente: 393336520050-1495999108@g.us
+[20/06/2025, 20:14:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:15:14] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:15:16] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:15:16] [INFO] Backup completato: backups\backup-2025-06-20T18-15-16-285Z.json
+[20/06/2025, 20:15:16] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-21-59-376Z.json
+[20/06/2025, 20:17:24] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:17:32] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:17:32] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:17:32] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:17:32] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:17:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:17:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:17:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:18:56] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:19:03] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:19:06] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:19:17] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:20:19] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:20:25] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:20:25] [INFO] Backup completato: backups\backup-2025-06-20T18-20-25-200Z.json
+[20/06/2025, 20:20:25] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-23-21-081Z.json
+[20/06/2025, 20:28:32] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:28:47] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:30:22] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:30:22] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:30:22] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:30:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:30:42] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:30:42] [INFO] Backup completato: backups\backup-2025-06-20T18-30-42-919Z.json
+[20/06/2025, 20:30:42] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-34-05-780Z.json
+[20/06/2025, 20:40:23] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:40:40] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:40:40] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:40:40] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:40:40] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:40:48] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:40:51] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:40:53] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:41:02] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:41:02] [INFO] Backup completato: backups\backup-2025-06-20T18-41-02-829Z.json
+[20/06/2025, 20:41:02] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-36-05-432Z.json
+[20/06/2025, 20:41:04] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:41:12] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:41:12] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:41:12] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:41:12] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:41:39] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:41:43] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:41:43] [INFO] Backup completato: backups\backup-2025-06-20T18-41-43-690Z.json
+[20/06/2025, 20:41:43] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-39-08-855Z.json
+[20/06/2025, 20:44:24] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:44:32] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:44:32] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:44:32] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:44:32] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:44:32] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:32] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:32] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:32] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:33] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:50] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:44:56] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:44:56] [INFO] Backup completato: backups\backup-2025-06-20T18-44-56-331Z.json
+[20/06/2025, 20:44:56] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-45-50-341Z.json
+[20/06/2025, 20:46:29] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:46:37] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:46:37] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:46:37] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:46:37] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:46:40] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:46:44] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:46:46] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:46:47] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:46:47] [INFO] Backup completato: backups\backup-2025-06-20T18-46-47-600Z.json
+[20/06/2025, 20:46:47] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T14-46-29-784Z.json
+[20/06/2025, 20:49:17] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:49:24] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:49:24] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:49:24] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:49:24] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:49:25] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:49:25] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:49:25] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:49:25] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:49:30] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:49:32] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:49:32] [INFO] Backup completato: backups\backup-2025-06-20T18-49-32-105Z.json
+[20/06/2025, 20:49:32] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-15-16-285Z.json
+[20/06/2025, 20:51:03] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:51:11] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:51:11] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:51:11] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:51:11] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:51:19] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 20:51:21] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:51:21] [INFO] Backup completato: backups\backup-2025-06-20T18-51-21-394Z.json
+[20/06/2025, 20:51:21] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-20-25-200Z.json
+[20/06/2025, 20:54:01] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 20:54:08] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 20:54:08] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 20:54:08] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 20:54:08] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 20:56:36] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 20:56:36] [INFO] Backup completato: backups\backup-2025-06-20T18-56-36-094Z.json
+[20/06/2025, 20:56:36] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-30-42-919Z.json
+[20/06/2025, 21:02:08] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:02:16] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:02:16] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:02:16] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:02:16] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:02:27] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 21:02:31] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:02:31] [INFO] Backup completato: backups\backup-2025-06-20T19-02-31-615Z.json
+[20/06/2025, 21:02:31] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-41-02-829Z.json
+[20/06/2025, 21:02:40] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:02:47] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:02:48] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:02:48] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:02:48] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:03:02] [ERROR] Errore nella gestione del messaggio: handleAdminGroup is not a function
+[20/06/2025, 21:03:06] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:03:06] [INFO] Backup completato: backups\backup-2025-06-20T19-03-06-269Z.json
+[20/06/2025, 21:03:06] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-41-43-690Z.json
+[20/06/2025, 21:06:54] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:07:03] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:07:03] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:07:03] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:07:03] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:08:37] [ERROR] Errore nella gestione del messaggio: filtroBestemmie is not defined
+[20/06/2025, 21:16:26] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:16:26] [INFO] Backup completato: backups\backup-2025-06-20T19-16-26-922Z.json
+[20/06/2025, 21:16:26] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-44-56-331Z.json
+[20/06/2025, 21:16:29] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:16:44] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:16:44] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:16:44] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:16:44] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:19:33] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:19:33] [INFO] Backup completato: backups\backup-2025-06-20T19-19-33-732Z.json
+[20/06/2025, 21:19:33] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-46-47-600Z.json
+[20/06/2025, 21:19:36] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:19:43] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:19:44] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:19:44] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:19:44] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:20:19] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:20:19] [INFO] Backup completato: backups\backup-2025-06-20T19-20-19-035Z.json
+[20/06/2025, 21:20:19] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-49-32-105Z.json
+[20/06/2025, 21:30:19] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:30:35] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:30:35] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:30:35] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:30:35] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:30:38] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:31:13] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:31:16] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:31:18] [WARNING] Rate limit superato per utente: 120363402008805194@g.us
+[20/06/2025, 21:31:33] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:31:33] [INFO] Backup completato: backups\backup-2025-06-20T19-31-33-672Z.json
+[20/06/2025, 21:31:33] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-51-21-394Z.json
+[20/06/2025, 21:34:09] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:34:17] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:34:17] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:34:17] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:34:17] [INFO] Numero WhatsApp: 393517331560
+[20/06/2025, 21:41:22] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[20/06/2025, 21:41:22] [INFO] Backup completato: backups\backup-2025-06-20T19-41-22-059Z.json
+[20/06/2025, 21:41:22] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T18-56-36-094Z.json
+[20/06/2025, 21:41:24] [INFO] 🚀 Avvio SuzakuBot...
+[20/06/2025, 21:41:32] [SUCCESS] Autenticazione completata con successo!
+[20/06/2025, 21:41:32] [SUCCESS] ✨ SuzakuBot è online e pronto! ✨
+[20/06/2025, 21:41:32] [INFO] Bot connesso come: SuzakuBot
+[20/06/2025, 21:41:32] [INFO] Numero WhatsApp: 393517331560
+[21/06/2025, 00:39:07] [WARNING] Ricevuto segnale di interruzione, chiudendo il bot...
+[21/06/2025, 00:39:07] [INFO] Backup completato: backups\backup-2025-06-20T22-39-07-488Z.json
+[21/06/2025, 00:39:07] [DEBUG] Backup vecchio eliminato: backup-2025-06-20T19-02-31-615Z.json

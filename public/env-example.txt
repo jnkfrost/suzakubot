@@ -1,0 +1,34 @@
+# Configurazione SuzakuBot
+
+# Impostazioni del Bot
+BOT_NAME=SuzakuBot
+BOT_VERSION=2.0.0
+NODE_ENV=production
+
+# Impostazioni Logging
+LOG_LEVEL=info
+LOG_TO_FILE=true
+MAX_LOG_FILES=7
+
+# Impostazioni Rate Limiting
+RATE_LIMIT_WINDOW=60000
+MAX_MESSAGES_PER_WINDOW=20
+
+# Impostazioni Backup
+AUTO_BACKUP=true
+BACKUP_INTERVAL=21600000
+MAX_BACKUP_FILES=7
+
+# Impostazioni Moderazione
+ANTI_SPAM_ENABLED=true
+ANTI_BESTEMMIE_ENABLED=true
+AUTO_BAN_AFTER_WARNS=3
+
+# Admin WhatsApp ID (inserisci il tuo numero)
+ADMIN_PHONE=39xxxxxxxxxx@c.us
+
+# Webhook URL (opzionale, per notifiche esterne)
+WEBHOOK_URL=
+
+# Database (se implementato in futuro)
+DATABASE_URL=

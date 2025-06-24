@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuzakuBot 2.0 Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">🤖</div>
+                <h1>SuzakuBot 2.0 Dashboard</h1>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot" id="status-dot"></span>
+                <span id="status-text">Online</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active" data-section="dashboard">
+                    <span class="sidebar-icon">📊</span>
+                    <span class="sidebar-text">Dashboard</span>
+                </li>
+                <li class="sidebar-item" data-section="statistics">
+                    <span class="sidebar-icon">📈</span>
+                    <span class="sidebar-text">Statistiche</span>
+                </li>
+                <li class="sidebar-item" data-section="configuration">
+                    <span class="sidebar-icon">⚙️</span>
+                    <span class="sidebar-text">Configurazione</span>
+                </li>
+                <li class="sidebar-item" data-section="logs">
+                    <span class="sidebar-icon">📋</span>
+                    <span class="sidebar-text">Log</span>
+                </li>
+                <li class="sidebar-item" data-section="backup">
+                    <span class="sidebar-icon">💾</span>
+                    <span class="sidebar-text">Backup</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section-header">
+                    <h2>Dashboard</h2>
+                    <button class="btn btn--primary" onclick="refreshData()">Aggiorna</button>
+                </div>
+
+                <!-- Status Cards -->
+                <div class="status-cards">
+                    <div class="status-card">
+                        <div class="status-card-icon">🟢</div>
+                        <div class="status-card-content">
+                            <h3>Stato Bot</h3>
+                            <p class="status-value" id="bot-status">Online</p>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-card-icon">📨</div>
+                        <div class="status-card-content">
+                            <h3>Messaggi Processati</h3>
+                            <p class="status-value" id="messages-processed">15,742</p>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-card-icon">👥</div>
+                        <div class="status-card-content">
+                            <h3>Gruppi Attivi</h3>
+                            <p class="status-value" id="active-groups">3</p>
+                        </div>
+                    </div>
+                    <div class="status-card">
+                        <div class="status-card-icon">🔨</div>
+                        <div class="status-card-content">
+                            <h3>Utenti Moderati</h3>
+                            <p class="status-value" id="moderated-users">28</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts and Activity -->
+                <div class="dashboard-grid">
+                    <div class="chart-container">
+                        <h3>Attività Settimanale</h3>
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                    <div class="recent-events">
+                        <h3>Eventi Recenti</h3>
+                        <div class="events-list" id="events-list">
+                            <!-- Events will be populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Info -->
+                <div class="system-info">
+                    <h3>Stato Sistema</h3>
+                    <div class="system-metrics">
+                        <div class="metric">
+                            <span class="metric-label">CPU</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="metric-value">45%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">RAM</span>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 67%"></div>
+                            </div>
+                            <span class="metric-value">67%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Uptime</span>
+                            <span class="metric-value">2d 14h 32m</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section id="statistics" class="section">
+                <div class="section-header">
+                    <h2>Statistiche</h2>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Comandi Popolari</h3>
+                        <div class="command-list">
+                            <div class="command-item">
+                                <span class="command-name">!quiz</span>
+                                <span class="command-count">542</span>
+                            </div>
+                            <div class="command-item">
+                                <span class="command-name">!citazione</span>
+                                <span class="command-count">389</span>
+                            </div>
+                            <div class="command-item">
+                                <span class="command-name">!regole</span>
+                                <span class="command-count">276</span>
+                            </div>
+                            <div class="command-item">
+                                <span class="command-name">!info</span>
+                                <span class="command-count">198</span>
+                            </div>
+                            <div class="command-item">
+                                <span class="command-name">!ping</span>
+                                <span class="command-count">167</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Moderazione</h3>
+                        <div class="moderation-stats">
+                            <div class="mod-stat">
+                                <span class="mod-label">Messaggi Eliminati</span>
+                                <span class="mod-value">234</span>
+                            </div>
+                            <div class="mod-stat">
+                                <span class="mod-label">Avvertimenti</span>
+                                <span class="mod-value">67</span>
+                            </div>
+                            <div class="mod-stat">
+                                <span class="mod-label">Ban Eseguiti</span>
+                                <span class="mod-value">8</span>
+                            </div>
+                            <div class="mod-stat">
+                                <span class="mod-label">Mute Applicati</span>
+                                <span class="mod-value">23</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>Top Players</h3>
+                        <div class="player-list">
+                            <div class="player-item">
+                                <span class="player-rank">1</span>
+                                <span class="player-name">Naruto_Fan</span>
+                                <span class="player-points">287 pts</span>
+                            </div>
+                            <div class="player-item">
+                                <span class="player-rank">2</span>
+                                <span class="player-name">OnePiece_King</span>
+                                <span class="player-points">245 pts</span>
+                            </div>
+                            <div class="player-item">
+                                <span class="player-rank">3</span>
+                                <span class="player-name">AnimeOtaku</span>
+                                <span class="player-points">198 pts</span>
+                            </div>
+                            <div class="player-item">
+                                <span class="player-rank">4</span>
+                                <span class="player-name">MangaReader</span>
+                                <span class="player-points">167 pts</span>
+                            </div>
+                            <div class="player-item">
+                                <span class="player-rank">5</span>
+                                <span class="player-name">SuzakuFan</span>
+                                <span class="player-points">134 pts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Configuration Section -->
+            <section id="configuration" class="section">
+                <div class="section-header">
+                    <h2>Configurazione</h2>
+                    <button class="btn btn--primary" onclick="saveConfiguration()">Salva Configurazione</button>
+                </div>
+
+                <div class="config-grid">
+                    <div class="config-card">
+                        <h3>Funzionalità Bot</h3>
+                        <div class="toggle-group">
+                            <div class="toggle-item">
+                                <label class="toggle-label">
+                                    <input type="checkbox" class="toggle-input" checked>
+                                    <span class="toggle-switch"></span>
+                                    Anti-Spam
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <label class="toggle-label">
+                                    <input type="checkbox" class="toggle-input" checked>
+                                    <span class="toggle-switch"></span>
+                                    Moderazione Automatica
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <label class="toggle-label">
+                                    <input type="checkbox" class="toggle-input" checked>
+                                    <span class="toggle-switch"></span>
+                                    Minigiochi
+                                </label>
+                            </div>
+                            <div class="toggle-item">
+                                <label class="toggle-label">
+                                    <input type="checkbox" class="toggle-input">
+                                    <span class="toggle-switch"></span>
+                                    Backup Automatici
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-card">
+                        <h3>Gruppi Autorizzati</h3>
+                        <div class="group-list">
+                            <div class="group-item">
+                                <span class="group-name">Anime Paradise</span>
+                                <span class="group-members">67 membri</span>
+                                <button class="btn btn--secondary btn--sm">Rimuovi</button>
+                            </div>
+                            <div class="group-item">
+                                <span class="group-name">Manga Central</span>
+                                <span class="group-members">52 membri</span>
+                                <button class="btn btn--secondary btn--sm">Rimuovi</button>
+                            </div>
+                            <div class="group-item">
+                                <span class="group-name">Pokemon Masters</span>
+                                <span class="group-members">37 membri</span>
+                                <button class="btn btn--secondary btn--sm">Rimuovi</button>
+                            </div>
+                        </div>
+                        <button class="btn btn--outline" onclick="addGroup()">Aggiungi Gruppo</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section id="logs" class="section">
+                <div class="section-header">
+                    <h2>Log</h2>
+                    <div class="log-controls">
+                        <select class="form-control" id="log-filter">
+                            <option value="all">Tutti i livelli</option>
+                            <option value="info">Info</option>
+                            <option value="warning">Warning</option>
+                            <option value="error">Error</option>
+                            <option value="success">Success</option>
+                        </select>
+                        <button class="btn btn--primary" onclick="downloadLogs()">Scarica Log</button>
+                    </div>
+                </div>
+
+                <div class="log-container">
+                    <div class="log-list" id="log-list">
+                        <!-- Logs will be populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Backup Section -->
+            <section id="backup" class="section">
+                <div class="section-header">
+                    <h2>Backup</h2>
+                    <button class="btn btn--primary" onclick="createBackup()">Crea Backup</button>
+                </div>
+
+                <div class="backup-container">
+                    <div class="backup-list">
+                        <div class="backup-item">
+                            <div class="backup-info">
+                                <span class="backup-file">backup-20250619-143000.json</span>
+                                <span class="backup-date">2025-06-19 14:30</span>
+                                <span class="backup-size">2.3 MB</span>
+                            </div>
+                            <div class="backup-actions">
+                                <button class="btn btn--secondary btn--sm">Scarica</button>
+                                <button class="btn btn--outline btn--sm">Ripristina</button>
+                            </div>
+                        </div>
+                        <div class="backup-item">
+                            <div class="backup-info">
+                                <span class="backup-file">backup-20250619-083000.json</span>
+                                <span class="backup-date">2025-06-19 08:30</span>
+                                <span class="backup-size">2.1 MB</span>
+                            </div>
+                            <div class="backup-actions">
+                                <button class="btn btn--secondary btn--sm">Scarica</button>
+                                <button class="btn btn--outline btn--sm">Ripristina</button>
+                            </div>
+                        </div>
+                        <div class="backup-item">
+                            <div class="backup-info">
+                                <span class="backup-file">backup-20250618-203000.json</span>
+                                <span class="backup-date">2025-06-18 20:30</span>
+                                <span class="backup-size">2.0 MB</span>
+                            </div>
+                            <div class="backup-actions">
+                                <button class="btn btn--secondary btn--sm">Scarica</button>
+                                <button class="btn btn--outline btn--sm">Ripristina</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Conferma</h3>
+            <p id="modal-message">Sei sicuro di voler procedere?</p>
+            <div class="modal-actions">
+                <button class="btn btn--secondary" onclick="closeModal()">Annulla</button>
+                <button class="btn btn--primary" id="modal-confirm">Conferma</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
